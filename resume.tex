@@ -1,103 +1,238 @@
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template for CV/Resume
-%
-% This template has been downloaded from:
-% https://github.com/posquit0/Awesome-CV
-%
-% Original author:
-% Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
-%
-% Modifications by:
-% Junhao Dong <junhao.dong96@gmail.com>
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-%
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{ulem}
+\usepackage{soul}
+% input{glyphtounicode}
 
 
-%-------------------------------------------------------------------------------
-% CONFIGURATIONS
-%-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, letterpaper]{awesome-cv}
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+\usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
 
-% Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
-
-% Specify the location of the included fonts
-\fontdir[fonts/]
-
-% Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-nephritis}
-% Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{CA63A8}
-
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
-
-% Set false if you don't want to highlight section with awesome color
-\setbool{acvSectionColorHighlight}{true}
-
-% If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-
-\makeatletter
-\patchcmd{\@sectioncolor}{\color}{\mdseries\color}{}{}
-\makeatother
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
 
 
-%-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/right
-% \photo[rectangle,edge,right]{profile}
-\name{Guhan}{Iyer} \vspace{1pt}
-% \address{}
-% \position{1A Computer Engineering}
-\mobile{(226) 505-7658}
-\email{g2iyer@uwaterloo.ca}
-% \homepage{homepage}
-\github{guhansiyer}
-\linkedin{guhansiyer}
-% \gitlab{gitlab-id}
-% \stackoverflow{SO-id}{SO-name}
-% \twitter{@twit}
-% \skype{skype-id}
-% \reddit{reddit-id}
-% \extrainfo{extra informations}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-%-------------------------------------------------------------------------------
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1.14pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \vspace{0.25pt}
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \begin{document}
 
-% Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[C]
+%----------HEADING----------
 
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-% \makecvfooter
-%   {\today}
-%   {Junhao Dong~~~·~~~Résumé}
-%   {\thepage}
+\begin{center}
+    {\Huge \textbf{Guhan Iyer}} \\ \vspace{7pt}
+    \normalsize \raisebox{-0.1\height}\faPhone\ (226) 505-7658 ~ 
+    \href{mailto:g2iyer@uwaterloo.ca}{\raisebox{-0.2\height}{\faEnvelope[regular]}\ \underline{g2iyer@uwaterloo.ca}} ~ 
+    \href{https://linkedin.com/in/guhansiyer/}{\raisebox{-0.2\height}\faLinkedin\ \underline{guhansiyer}}  ~
+    \href{https://github.com/guhansiyer}{\raisebox{-0.2\height}\faGithub\ \underline{guhansiyer}} ~
+    \href{https://guhaniyer.com}{\raisebox{-0.2\height}\faLink\ \underline{guhaniyer.com}}
+\end{center}
 
-%-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
-%-------------------------------------------------------------------------------
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C, C++, Java, Python, VHDL, Verilog, SystemVerilog, MATLAB, RISC-V Assembly} \\
+     \textbf{Libraries \& Tools}{: FreeRTOS, Git, CMake, Make, Valgrind, GDB, Quartus, Apio, Yosys, Icestorm} \\
+     \textbf{Technologies \& Protocols}{: FPGA, ARM (STM32, TI), I2C, UART, SPI,  TCP/IP, CAN}
+                }
+        }
+ \end{itemize}
 
-\input{resume/skills.tex}
-\input{resume/experience.tex}
-\input{resume/projects.tex}
-\input{resume/education.tex}
 
-%-------------------------------------------------------------------------------
+%-------------------------------------------
+
+
+
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      {Security Software Intern}{Jan. 2025 -- Apr. 2025}
+      {Ford Motor Company}{Waterloo, ON}
+      \resumeItemListStart
+        \resumeItem{.}
+        \resumeItem{}
+        \resumeItem{}
+        \resumeItem{}
+        \resumeItem{}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Systems Software Engineering Intern}{May 2024 -- Aug. 2024}
+      {NCR Voyix}{Waterloo, ON}
+      \resumeItemListStart
+        \resumeItem{Designed and maintained various internal tools for R\&D teams across the company.}
+        \resumeItem{Utilized \textbf{Python} to integrate a core query tool into a newly-initiated patch management project.}
+        % \resumeItem{Individually developed a service to validate device compliance data for use organization-wide.}
+        \resumeItem{Developed a patch verification utility to serve over \textbf{10,000} devices across \textbf{10+} device platforms.}
+        % \resumeItem{Refactored task-scheduled scripts to update internal documents with current user information.}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\section{Student Design Teams}
+  \resumeSubHeadingListStart    \resumeSubheading
+      {Embedded Software Developer}{July 2023 -- Present}
+      {UW Orbital — University of Waterloo Satellite Design Team}{}
+      \resumeItemListStart
+        \resumeItem{Developed a \textbf{C}-based thermal monitoring system and essential functions for command \& data handling.}
+        \resumeItem{Designed an \textbf{I2C} driver to manage readings from digital temperature sensors and create telemetry data.}
+        \resumeItem{Leveraged \textbf{FreeRTOS} to create a hysteresis handler, effectively managing over-temperature events.}
+        \resumeItem{Integrated logging and stack overflow handling in \textbf{all} interrupt services, improving system resiliency.}
+      \resumeItemListEnd
+
+    % \resumeSubheading
+    %   {Electrical and Telemetry Lead}{Sept. 2022 -- June 2023}
+    %   {Laurel Heights Secondary School Electric Vehicle Club}{Waterloo, ON}
+    %   \resumeItemListStart
+    %     \resumeItem{Designed, assembled, and maintained the electrical systems of student-built electric vehicles.}
+    %     \resumeItem{Implemented a telemetry system by interfacing a radio frequency module with \textbf{Arduino}.}
+    %     \resumeItem{Competed in the Waterloo Electric Vehicle Challenge, placing \textbf{1st} in the 24-volt category.}
+    % \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Selected Projects}
+    \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+          { \href{https://github.com/guhansiyer/mira}{\uline{\textbf{MIRA: Minimalistic RISC Architecture}}} $|$ \textit{FPGA, Verilog, Apio, Yosys, Icestorm}}{}
+          \resumeItemListStart
+            % \resumeItem{Designed and documented MIRA, a basic instruction set architecture created with \textbf{RISC} principles.}
+            % \resumeItem{Implemented a MIRA softcore with \textbf{Verilog}, targeting the \textbf{iCE40UP5k FPGA}.}
+            \resumeItem{}
+            \resumeItem{}
+
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\href{https://github.com/guhansiyer/firefighter-code}{ \uline{\textbf{Maze Solving Firefighter Robot}}}  $|$ \textit{BASIC}}{}
+          \resumeItemListStart
+            \resumeItem{Built a robot to solve complex mazes where it must locate and extinguish a lit candle.}
+            \resumeItem{Designed autonomous operation software in \textbf{BASIC} with sensor-based path planning algorithms.}
+            % \resumeItem{Performed calibration, allowing the robot to perform \textbf{sub-five second} maze solves in standard competition mazes.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%
+\section{Open Source Contributions}
+    \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+          {\href{https://github.com/zephyrproject-rtos/zephyr}{\uline{\textbf{@zephyrproject-rtos/zephyr}}} $|$ \textit{C}}{}
+          \resumeItemListStart
+            \resumeItem{}
+            % \resumeItem{Added support for various \textbf{ANSI C} functions in Zephyr's implementation of the \textbf{C standard library}.}
+          \resumeItemListEnd
+
+    \resumeProjectHeading
+          {\href{https://github.com/InfiniTimeOrg/InfiniTime}{\uline{\textbf{@InfiniTimeOrg/InfiniTime}}} $|$ \textit{C, C++}}{}
+          \resumeItemListStart
+            \resumeItem{}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Waterloo, ON}
+      {Candidate for Bachelor of Applied Science in Computer Engineering}{Sept. 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Algorithms \& Data Structures (C++), Digital Systems (VHDL), Digital Computers (RISC-V Assembly), Numerical Methods (MATLAB) }
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
 \end{document}
