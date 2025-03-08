@@ -1,4 +1,6 @@
-# Guhan Iyer - Resume
+# Resume
+
+This repository holds the LaTex for my resume, compiled into a ```.pdf``` using ```pdflatex```. 
 
 ## PowerShell and Bash scripts
 
