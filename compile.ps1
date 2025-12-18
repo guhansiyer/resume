@@ -1,5 +1,5 @@
 # Explicit error handling and logging
-$texFile = "resume.tex"
+$texFile = "GI_Resume.tex"
 $outputDir = "output"
 
 # Ensure output directory exists

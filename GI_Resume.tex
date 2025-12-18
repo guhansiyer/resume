@@ -1,0 +1,212 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{ulem}
+\usepackage{soul}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{nunito}
+% \usepackage{CormorantGaramond}
+\usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1.14pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \vspace{0.25pt}
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+   \textbf{\huge{Guhan Iyer}} & Email: \href{mailto:4guhaniyer@gmail.com}{4guhaniyer@gmail.com}\\
+    \href{https://www.linkedin.com/in/guhansiyer}{linkedin.com/in/guhansiyer \faIcon{external-link-alt}} \space $\vert$  \href{https://github.com/guhansiyer}{github.com/guhansiyer \faIcon{external-link-alt}} & Phone: (226) 505-7658 \cr  
+ \end{tabular*}
+
+% \begin{center}
+%     { \Huge \textbf{Guhan Iyer}} \\ \vspace{3pt}
+%     \normalsize \raisebox{-0.1\height} ~
+%     {\faPhoneSquare\ (226) 505-7658} {$\mid$} 
+%     % \href{mailto:g2iyer@uwaterloo.ca}{\raisebox{-0.2\height}{\faEnvelope[regular]}\ \underline{guhan.iyer@uwaterloo.ca}} {$\mid$}
+%     \href{mailto:4guhaniyer@gmail.com}{\raisebox{-0.2\height}{\faEnvelope[regular]}\ \underline{4guhaniyer@gmail.com}} {$\mid$}
+%     \href{https://linkedin.com/in/guhansiyer/}{\raisebox{-0.2\height}\faLinkedin\ \underline{guhansiyer}} {$\mid$} 
+%     \href{https://github.com/guhansiyer}{\raisebox{-0.2\height}\faGithub\ \underline{guhansiyer}}
+% \end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Expected Graduation: \textbf{April 2027}}
+      {Bachelor of Applied Science in Computer Engineering}{Waterloo, Ontario}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Systems Programming \& Concurrency, Algorithms \& Data Structures, Digital Computers}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+  
+%-----------WORK EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Nokia}{Sept. 2025 -- Dec. 2025}
+      {Firmware Engineering Intern}{Ottawa, Ontario}
+      \resumeItemListStart
+        \resumeItem{Implemented a device initialization framework in \textbf{C++} for a new optical transceiver ASIC, optimizing boot sequence control across hardware modules.} % add some figure about latency improvement/performance optimzations: "optimizating boot sequences and reducing X by Y%/sec/."
+        \resumeItem{Re-engineered critical \textbf{C++} message passing service by introducing 128-bit atomic operations, eliminating data corruption in \textbf{100\% of packets sent}.}
+        \resumeItem{Resolved \textbf{10+} major defects in ASIC SDK by analyzing firmware trace logs, significantly reducing crash frequency.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Ford Motor Company}{Jan. 2025 -- Apr. 2025}
+      {Software Development Intern}{Waterloo, Ontario}
+      \resumeItemListStart
+        \resumeItem{Created a modular library in \textbf{Python} to simplify and scale testing for an in-vehicle security daemon, reducing reliance on external tooling.}
+        \resumeItem{Updated \textbf{30+} legacy tests to utilize the new library, standardizing test structure and reducing maintenance effort.}
+        \resumeItem{Refactored a deprecated generator utility in \textbf{Python} with the \textbf{Slash} framework, integrating directly with existing infrastructure.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {NCR Voyix}{May 2024 -- Aug. 2024}
+      {Software Engineering Intern}{Waterloo, Ontario}
+      \resumeItemListStart
+        \resumeItem{Integrated an internal \textbf{Python} query utility into a new patch management system, enabling automatic device data retrieval.}
+        \resumeItem{Instrumented a service to validate per-device network compliance data for use \textbf{organization-wide}.}
+        \resumeItem{Developed a cross-platform patch verification tool serving \textbf{10,000+} devices across \textbf{10+} platforms.}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+    
+%-------------------------------------------
+%-----------PROJECTS-----------
+\section{Technical Projects}
+    \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+          {\href{}{ \textbf{ARM Microkernel}}  \space  $|$ \textit{C, Raspberry Pi, ARM Assembly}}{November 2025}
+          \resumeItemListStart
+            \resumeItem{Designed \textbf{core kernel functionality} including interrupt vectors, inter-process communication, and memory-mapped device I/O.}
+            \resumeItem{Implemented a cooperative multitasking scheduler with low-overhead context switching for lightweight user-process management.}
+            \resumeItem{Built a custom \textbf{ARM} bootloader to initialize hardware peripherals for a stable system boot sequence.}
+
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+          {\href{https://github.com/guhansiyer/osh}{\textbf{osh: The Open Shell} \faIcon{external-link-alt}}  \space  $|$ \textit{C, Linux}}{April 2025}
+          \resumeItemListStart
+            \resumeItem{Created a lightweight \textbf{Linux} shell in C supporting built-ins, external programs, and custom commands.}
+            \resumeItem{Utilized Linux syscalls to implement piping, redirection ($<, >$), and custom built-ins.}
+            \resumeItem{Improved responsiveness by adding a persistent command history with \textbf{readline}.}
+
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+          {\href{https://github.com/guhansiyer/wintop}{\textbf{wintop} \faIcon{external-link-alt}}  \space  $|$ \textit{C, MSVC, Windows API}}{March 2025}
+          \resumeItemListStart
+            \resumeItem{Developed a CLI-based \textbf{thread and process inspector} in \textbf{C} for \textbf{Windows} platforms, exposing detailed per-thread scheduling and runtime metadata.}
+            \resumeItem{Leveraged \textbf{Win32 APIs} to enumerate active threads and retrieve metadata with minimal runtime overhead.}
+            \resumeItem{Designed a terminal interface to provide \textbf{real-time} diagnostic information, emulating \textit{top} and \textit{ps}.}
+
+        \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+                 \textbf{Languages}{: C, C++, Python, Java, Bash, Assembly (ARM, RISC-V)} \\
+                 \textbf{Libraries \& Tools}{: Valgrind, GDB, CMake, Make, Android Tools (adb, Fastboot), Docker} \\
+                 \textbf{Technologies \& Protocols}{: Linux, QNX, FreeRTOS, CAN, TCP/IP, UART, I2C, gRPC, protobuf}
+            }
+        }
+ \end{itemize}
+
+
+
+\end{document}

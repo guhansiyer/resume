@@ -1,7 +1,20 @@
 # Resume
 
-This repository holds the LaTex for my resume, compiled into a ```.pdf``` using ```pdflatex```. 
+This repository holds the LaTeX for and most updated versions of my resume.
 
 ## PowerShell and Bash scripts
 
-The scripts enable pdflatex to compile the TeX file into a separate folder. Run either ```.\compile.ps1``` for Windows, or ```chmod +x compile.sh``` and ```.\compile.sh``` for MacOS/Linux.
+The scripts enable ```pdflatex``` to compile the TeX file into a separate folder.
+
+### Windows
+
+```sh
+./compile.ps1
+```
+
+### MacOS, Linux
+
+```sh
+chmod +x compile.sh
+./compile.sh
+```
