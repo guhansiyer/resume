@@ -127,7 +127,7 @@
       {University of Waterloo}{Expected Graduation: \textbf{April 2028}}
       {Bachelor of Applied Science in Computer Engineering}{Waterloo, Ontario}
       \resumeItemListStart
-        \resumeItem{Relevant Coursework: Systems Programming \& Concurrency, Algorithms \& Data Structures, Digital Computers}
+        \resumeItem{Relevant Coursework: Real-Time Operating Systems, Algorithms \& Data Structures, Digital Computers}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
   
@@ -139,9 +139,9 @@
       {Nokia}{Sept. 2025 -- Dec. 2025}
       {Firmware Engineering Intern}{Ottawa, Ontario}
       \resumeItemListStart
-        \resumeItem{Implemented a device initialization framework in \textbf{C++} for a new optical transceiver ASIC, optimizing boot sequence control across hardware modules.} % add some figure about latency improvement/performance optimzations: "optimizating boot sequences and reducing X by Y%/sec/."
-        \resumeItem{Eliminated packet corruption in a critical \textbf{C++} message-passing service by fixing race conditions with 128-bit atomic operations, ensuring data integrity.}
-        \resumeItem{Resolved \textbf{10+} major defects in the ASIC SDK by analyzing firmware trace logs, significantly reducing crash frequency.}
+        \resumeItem{Built \textbf{C++} device initialization service for a new optical transceiver ASIC, optimizing boot sequence control across hardware modules.} % add some figure about latency improvement/performance optimzations: "optimizating boot sequences and reducing X by Y%/sec/."
+        \resumeItem{Eliminated packet corruption in a critical \textbf{C++} message-passing utility with 128-bit atomic operations, \textbf{resolving race conditions} and ensuring data integrity.}
+        \resumeItem{Resolved \textbf{10+} major defects in the ASIC SDK by analyzing firmware trace logs, reducing daily crash frequency to \textbf{zero}.}
       \resumeItemListEnd
       
     \resumeSubheading
@@ -149,8 +149,8 @@
       {Software Development Intern}{Waterloo, Ontario}
       \resumeItemListStart
         \resumeItem{Created a modular library in \textbf{Python} to simplify and scale testing for an in-vehicle security daemon, reducing reliance on external tooling.}
-        \resumeItem{Refactored a deprecated generator utility to integrate with new test infrastructure via \textbf{Python} and \textbf{Slash}, enhancing and enabling \textbf{multiple testing workflows}.}
-        \resumeItem{Reworked \textbf{30+} legacy tests to utilize the new library, standardizing test structure for \textbf{all downstream testers}.}
+        \resumeItem{Refactored a deprecated generator utility to integrate with new \textbf{Python} test infrastructure, enabling and enhancing new testing workflows for \textbf{100+ engineers}.}
+        \resumeItem{Reworked \textbf{30+} legacy tests to utilize the new library, standardizing test structure for \textbf{all downstream developers}.}
       \resumeItemListEnd
       
     \resumeSubheading
@@ -168,32 +168,38 @@
 \section{Projects}
     \resumeSubHeadingListStart
 
-    \resumeProjectHeading
-          {\href{}{ \textbf{ARM Microkernel}}  \space  $|$ \textit{C, Raspberry Pi, ARM Assembly}}{November 2025}
-          \resumeItemListStart
-            \resumeItem{Designed core kernel functionality including interrupt vectors, inter-process communication, and memory-mapped device I/O.}
-            \resumeItem{Implemented a \textbf{cooperative multitasking scheduler} with low-overhead context switching for lightweight user-process management.}
-            \resumeItem{Built a custom \textbf{ARM} bootloader to initialize hardware peripherals for a stable system boot sequence.}
+    % \resumeProjectHeading
+    %       {\href{}{ \textbf{ARM Microkernel}}  \space  $|$ \textit{C, Raspberry Pi, ARM Assembly}}{November 2025}
+    %       \resumeItemListStart
+    %         \resumeItem{Designed core kernel functionality including interrupt vectors, inter-process communication, and memory-mapped device I/O.}
+    %         \resumeItem{Implemented a \textbf{cooperative multitasking scheduler} with low-overhead context switching for lightweight user-process management.}
+    %         \resumeItem{Built a custom \textbf{ARM} bootloader to initialize hardware peripherals for a stable system boot sequence.}
 
-        \resumeItemListEnd
-
-    \resumeProjectHeading
-          {\href{https://github.com/guhansiyer/osh}{\textbf{osh: The Open Shell} \faIcon{external-link-alt}}  \space  $|$ \textit{C, Linux}}{April 2025}
-          \resumeItemListStart
-            \resumeItem{Created a lightweight \textbf{Linux} shell in C supporting built-ins, external programs, and custom commands.}
-            \resumeItem{Utilized Linux syscalls to implement piping, redirection, and custom built-ins.}
-            \resumeItem{Improved responsiveness by adding a persistent command history with \textbf{readline}.}
-
-        \resumeItemListEnd
+    %     \resumeItemListEnd
 
     \resumeProjectHeading
-          {\href{https://github.com/guhansiyer/wintop}{\textbf{wintop} \faIcon{external-link-alt}}  \space  $|$ \textit{C, MSVC, Windows API}}{March 2025}
+          {\href{https://github.com/guhansiyer/wintop}{\textbf{wintop} \faIcon{external-link-alt}}  \space  $|$ \textit{C, MSVC, Windows API}}{}
           \resumeItemListStart
             \resumeItem{Developed a CLI-based \textbf{thread and process inspector} in \textbf{C} for \textbf{Windows} platforms, exposing detailed per-thread scheduling and runtime information.}
-            \resumeItem{Leveraged \textbf{Win32 APIs} to \textbf{enumerate active threads} and retrieve metadata with minimal runtime overhead.}
+            \resumeItem{Leveraged \textbf{Win32 APIs} to \textbf{enumerate active threads} and retrieve metadata with low overhead.}
             \resumeItem{Designed a terminal interface to provide \textbf{real-time} diagnostic information, emulating \textit{top} and \textit{ps}.}
-
         \resumeItemListEnd
+
+    \resumeProjectHeading
+          {\href{https://github.com/guhansiyer/osh}{\textbf{osh: The Open Shell} \faIcon{external-link-alt}}  \space  $|$ \textit{C, Linux}}{}
+          \resumeItemListStart
+            \resumeItem{Created a lightweight \textbf{Linux} shell in C supporting built-ins, external programs, and custom commands.}
+            \resumeItem{Implemented pipelines and I/O redirection using \textbf{Linux} syscalls and \textbf{POSIX} file descriptor semantics.}
+            \resumeItem{Improved responsiveness by adding a persistent command history with \textbf{readline}.}
+        \resumeItemListEnd
+    
+    \resumeProjectHeading
+      {\href{https://github.com/WilliamZhang20/ECE298A-TPU}{ \textbf{TT-TPU} \faIcon{external-link-alt}}  \space  $|$ \textit{Verilog, Python}}{}
+      \resumeItemListStart
+        \resumeItem{Designed a simplified tensor processing unit supporting \textbf{2-by-2 matrix multiplication}; submitted to \textbf{Tiny Tapeout} project for manufacturing.}
+        \resumeItem{Implemented an on-chip store with \textbf{Verilog} to hold input and weight matrices, enabling continuous data streaming at \textbf{$\sim$99.8 MOP/s}.}
+        \resumeItem{Verified designs with \textbf{Python}/\textbf{cocotb} and performed static timing analysis with \textbf{OpenSTA}, ensuring functional correctness.}
+    \resumeItemListEnd
     \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
@@ -206,7 +212,5 @@
             }
         }
  \end{itemize}
-
-
 
 \end{document}
