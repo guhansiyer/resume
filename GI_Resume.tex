@@ -106,7 +106,7 @@
 
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-   \textbf{\huge{Guhan Iyer}} & Email: \href{mailto:4guhaniyer@gmail.com}{4guhaniyer@gmail.com}\\
+   \textbf{\huge{Guhan Iyer}} & Email: \href{mailto:guhan.iyer@uwaterloo.ca}{guhan.iyer@uwaterloo.ca}\\
     \href{https://www.linkedin.com/in/guhansiyer}{linkedin.com/in/guhansiyer \faIcon{external-link-alt}} \space $\vert$  \href{https://github.com/guhansiyer}{github.com/guhansiyer \faIcon{external-link-alt}} & Phone: +1 (226) 505-7658 \cr  
  \end{tabular*}
 
@@ -178,28 +178,28 @@
     %     \resumeItemListEnd
 
     \resumeProjectHeading
+      {\href{https://github.com/WilliamZhang20/ECE298A-TPU}{ \textbf{TT-TPU} \faIcon{external-link-alt}}  \space  $|$ \textit{Verilog, Python}}{}
+      \resumeItemListStart
+        \resumeItem{Designed a simplified tensor processing unit supporting \textbf{2-by-2 integer matrix multiplication}; submitted to \textbf{Tiny Tapeout} project for manufacturing.}
+        \resumeItem{Implemented an on-chip scratchpad memory in \textbf{Verilog} to stage input and weight matrices, enabling continuous streaming to the compute datapath and sustaining \textbf{$\sim$99.8 MOP/s} of throughput.}
+        \resumeItem{Verified designs with \textbf{Python}/\textbf{cocotb} and ran static timing analysis with \textbf{OpenSTA}, ensuring functional correctness.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading
           {\href{https://github.com/guhansiyer/wintop}{\textbf{wintop} \faIcon{external-link-alt}}  \space  $|$ \textit{C, MSVC, Windows API}}{}
           \resumeItemListStart
             \resumeItem{Developed a CLI-based \textbf{thread and process inspector} in \textbf{C} for \textbf{Windows} platforms, exposing detailed per-thread scheduling and runtime information.}
-            \resumeItem{Leveraged \textbf{Win32 APIs} to \textbf{enumerate active threads} and retrieve metadata with low overhead.}
+            \resumeItem{Enumerated processes and threads with \textbf{Win32 APIs}, retrieving priority, state, and timing metadata with low overhead.}
             \resumeItem{Designed a terminal interface to provide \textbf{real-time} diagnostic information, emulating \textit{top} and \textit{ps}.}
         \resumeItemListEnd
 
     \resumeProjectHeading
           {\href{https://github.com/guhansiyer/osh}{\textbf{osh: The Open Shell} \faIcon{external-link-alt}}  \space  $|$ \textit{C, Linux}}{}
           \resumeItemListStart
-            \resumeItem{Created a lightweight \textbf{Linux} shell in C supporting built-ins, external programs, and custom commands.}
+            \resumeItem{Created a lightweight \textbf{Linux} shell in C supporting built-ins and external programs.}
             \resumeItem{Implemented pipelines and I/O redirection using \textbf{Linux} syscalls and \textbf{POSIX} file descriptor semantics.}
-            \resumeItem{Improved responsiveness by adding a persistent command history with \textbf{readline}.}
+            \resumeItem{Added persistent command history using \textbf{readline} to improve interactive usability.}
         \resumeItemListEnd
-    
-    \resumeProjectHeading
-      {\href{https://github.com/WilliamZhang20/ECE298A-TPU}{ \textbf{TT-TPU} \faIcon{external-link-alt}}  \space  $|$ \textit{Verilog, Python}}{}
-      \resumeItemListStart
-        \resumeItem{Designed a simplified tensor processing unit supporting \textbf{2-by-2 matrix multiplication}; submitted to \textbf{Tiny Tapeout} project for manufacturing.}
-        \resumeItem{Implemented an on-chip store with \textbf{Verilog} to hold input and weight matrices, enabling continuous data streaming at \textbf{$\sim$99.8 MOP/s}.}
-        \resumeItem{Verified designs with \textbf{Python}/\textbf{cocotb} and performed static timing analysis with \textbf{OpenSTA}, ensuring functional correctness.}
-    \resumeItemListEnd
     \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
