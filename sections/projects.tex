@@ -1,0 +1,36 @@
+\section{Projects}
+    \resumeSubHeadingListStart
+
+    % \resumeProjectHeading
+    %       {\href{}{ \textbf{ARM Microkernel}}  \space  $|$ \textit{C, Raspberry Pi, ARM Assembly}}{November 2025}
+    %       \resumeItemListStart
+    %         \resumeItem{Designed core kernel functionality including interrupt vectors, inter-process communication, and memory-mapped device I/O.}
+    %         \resumeItem{Implemented a \textbf{cooperative multitasking scheduler} with low-overhead context switching for lightweight user-process management.}
+    %         \resumeItem{Built a custom \textbf{ARM} bootloader to initialize hardware peripherals for a stable system boot sequence.}
+
+    %     \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\href{https://github.com/WilliamZhang20/ECE298A-TPU}{ \uline{\textbf{TT-TPU}}}  \space  $|$ \textit{Verilog, Python}}{}
+      \resumeItemListStart
+        \resumeItem{Designed a simplified tensor processing unit supporting \textbf{2-by-2 integer matrix multiplication}; submitted to \textbf{Tiny Tapeout} project for manufacturing.}
+        \resumeItem{Implemented an on-chip scratchpad memory in \textbf{Verilog} to stage input and weight matrices, enabling continuous streaming to the compute datapath and sustaining \textbf{$\sim$99.8 MOP/s} of throughput.}
+        \resumeItem{Verified designs with \textbf{Python}/\textbf{cocotb} and ran static timing analysis with \textbf{OpenSTA}, ensuring functional correctness.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading
+          {\href{https://github.com/guhansiyer/wintop}{\uline{\textbf{wintop}}}  \space  $|$ \textit{C, MSVC, Windows API}}{}
+          \resumeItemListStart
+            \resumeItem{Developed a CLI-based \textbf{thread and process inspector} in \textbf{C} for \textbf{Windows} platforms, exposing detailed per-thread scheduling and runtime information.}
+            \resumeItem{Enumerated processes and threads with \textbf{Win32 APIs}, retrieving priority, state, and timing metadata with low overhead.}
+            \resumeItem{Designed a terminal interface to provide \textbf{real-time} diagnostic information, emulating \textit{top} and \textit{ps}.}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+          {\href{https://github.com/guhansiyer/osh}{\uline{\textbf{osh: The Open Shell}}}  \space  $|$ \textit{C, Linux}}{}
+          \resumeItemListStart
+            \resumeItem{Created a lightweight \textbf{Linux} shell in C supporting built-ins and external programs.}
+            \resumeItem{Implemented pipelines and I/O redirection using \textbf{Linux} syscalls and \textbf{POSIX} file descriptor semantics.}
+            \resumeItem{Added persistent command history using \textbf{readline} to improve interactive usability.}
+        \resumeItemListEnd
+    \resumeSubHeadingListEnd

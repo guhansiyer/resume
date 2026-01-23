@@ -22,12 +22,12 @@
 % \usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
 % \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
+\usepackage[default]{sourcesanspro}
 
 % serif
 % \usepackage{nunito}
 % \usepackage{CormorantGaramond}
-\usepackage{charter}
+% \usepackage{charter}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -99,118 +99,25 @@
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{document}
 
-%----------HEADING----------
+\input{sections/order.tex}
 
+\input{sections/header.tex}
 
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-   \textbf{\huge{Guhan Iyer}} & Email: \href{mailto:guhan.iyer@uwaterloo.ca}{guhan.iyer@uwaterloo.ca}\\
-    \href{https://www.linkedin.com/in/guhansiyer}{linkedin.com/in/guhansiyer \faIcon{external-link-alt}} \space $\vert$  \href{https://github.com/guhansiyer}{github.com/guhansiyer \faIcon{external-link-alt}} & Phone: +1 (226) 505-7658 \cr  
- \end{tabular*}
+\ifskillsfirst
+  \input{sections/skills.tex}
+\else
+  \input{sections/education.tex}
+\fi
 
-% \begin{center}
-%     { \Huge \textbf{Guhan Iyer}} \\ \vspace{3pt}
-%     \normalsize \raisebox{-0.1\height} ~
-%     {\faPhoneSquare\ (226) 505-7658} {$\mid$} 
-%     % \href{mailto:g2iyer@uwaterloo.ca}{\raisebox{-0.2\height}{\faEnvelope[regular]}\ \underline{guhan.iyer@uwaterloo.ca}} {$\mid$}
-%     \href{mailto:4guhaniyer@gmail.com}{\raisebox{-0.2\height}{\faEnvelope[regular]}\ \underline{4guhaniyer@gmail.com}} {$\mid$}
-%     \href{https://linkedin.com/in/guhansiyer/}{\raisebox{-0.2\height}\faLinkedin\ \underline{guhansiyer}} {$\mid$} 
-%     \href{https://github.com/guhansiyer}{\raisebox{-0.2\height}\faGithub\ \underline{guhansiyer}}
-% \end{center}
+\input{sections/experience.tex}
+\input{sections/projects.tex}
 
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University of Waterloo}{Expected Graduation: \textbf{April 2028}}
-      {Bachelor of Applied Science in Computer Engineering}{Waterloo, Ontario}
-      \resumeItemListStart
-        \resumeItem{Relevant Coursework: Real-Time Operating Systems, Algorithms \& Data Structures, Digital Computers}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-  
-%-----------WORK EXPERIENCE-----------
-\section{Experience}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Nokia}{Sept. 2025 -- Dec. 2025}
-      {Firmware Engineering Intern}{Ottawa, Ontario}
-      \resumeItemListStart
-        \resumeItem{Built \textbf{C++} device initialization service for a new optical transceiver ASIC, optimizing boot sequence control across hardware modules.} % add some figure about latency improvement/performance optimzations: "optimizating boot sequences and reducing X by Y%/sec/."
-        \resumeItem{Eliminated packet corruption in a critical \textbf{C++} message-passing utility with 128-bit atomic operations, \textbf{resolving race conditions} and ensuring data integrity.}
-        \resumeItem{Resolved \textbf{10+} major defects in the ASIC SDK by analyzing firmware trace logs, reducing daily crash frequency to \textbf{zero}.}
-      \resumeItemListEnd
-      
-    \resumeSubheading
-      {Ford Motor Company}{Jan. 2025 -- Apr. 2025}
-      {Software Development Intern}{Waterloo, Ontario}
-      \resumeItemListStart
-        \resumeItem{Created a modular library in \textbf{Python} to simplify and scale testing for an in-vehicle security daemon, reducing reliance on external tooling.}
-        \resumeItem{Refactored a deprecated generator utility to integrate with new \textbf{Python} test infrastructure, enabling and enhancing new testing workflows for \textbf{100+ engineers}.}
-        \resumeItem{Reworked \textbf{30+} legacy tests to utilize the new library, standardizing test structure for \textbf{all downstream developers}.}
-      \resumeItemListEnd
-      
-    \resumeSubheading
-      {NCR Voyix}{May 2024 -- Aug. 2024}
-      {Software Engineering Intern}{Waterloo, Ontario}
-      \resumeItemListStart
-        \resumeItem{Integrated an internal \textbf{Python} query utility into a new patch management system, enabling automatic device data retrieval.}
-        \resumeItem{Instrumented a service to validate per-device network compliance data for use \textbf{organization-wide}.}
-        \resumeItem{Developed a cross-platform patch verification tool serving \textbf{10,000+} devices across \textbf{10+} platforms.}
-      \resumeItemListEnd
-    \resumeSubHeadingListEnd
-    
-%-------------------------------------------
-%-----------PROJECTS-----------
-\section{Projects}
-    \resumeSubHeadingListStart
-
-    % \resumeProjectHeading
-    %       {\href{}{ \textbf{ARM Microkernel}}  \space  $|$ \textit{C, Raspberry Pi, ARM Assembly}}{November 2025}
-    %       \resumeItemListStart
-    %         \resumeItem{Designed core kernel functionality including interrupt vectors, inter-process communication, and memory-mapped device I/O.}
-    %         \resumeItem{Implemented a \textbf{cooperative multitasking scheduler} with low-overhead context switching for lightweight user-process management.}
-    %         \resumeItem{Built a custom \textbf{ARM} bootloader to initialize hardware peripherals for a stable system boot sequence.}
-
-    %     \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\href{https://github.com/WilliamZhang20/ECE298A-TPU}{ \textbf{TT-TPU} \faIcon{external-link-alt}}  \space  $|$ \textit{Verilog, Python}}{}
-      \resumeItemListStart
-        \resumeItem{Designed a simplified tensor processing unit supporting \textbf{2-by-2 integer matrix multiplication}; submitted to \textbf{Tiny Tapeout} project for manufacturing.}
-        \resumeItem{Implemented an on-chip scratchpad memory in \textbf{Verilog} to stage input and weight matrices, enabling continuous streaming to the compute datapath and sustaining \textbf{$\sim$99.8 MOP/s} of throughput.}
-        \resumeItem{Verified designs with \textbf{Python}/\textbf{cocotb} and ran static timing analysis with \textbf{OpenSTA}, ensuring functional correctness.}
-    \resumeItemListEnd
-
-    \resumeProjectHeading
-          {\href{https://github.com/guhansiyer/wintop}{\textbf{wintop} \faIcon{external-link-alt}}  \space  $|$ \textit{C, MSVC, Windows API}}{}
-          \resumeItemListStart
-            \resumeItem{Developed a CLI-based \textbf{thread and process inspector} in \textbf{C} for \textbf{Windows} platforms, exposing detailed per-thread scheduling and runtime information.}
-            \resumeItem{Enumerated processes and threads with \textbf{Win32 APIs}, retrieving priority, state, and timing metadata with low overhead.}
-            \resumeItem{Designed a terminal interface to provide \textbf{real-time} diagnostic information, emulating \textit{top} and \textit{ps}.}
-        \resumeItemListEnd
-
-    \resumeProjectHeading
-          {\href{https://github.com/guhansiyer/osh}{\textbf{osh: The Open Shell} \faIcon{external-link-alt}}  \space  $|$ \textit{C, Linux}}{}
-          \resumeItemListStart
-            \resumeItem{Created a lightweight \textbf{Linux} shell in C supporting built-ins and external programs.}
-            \resumeItem{Implemented pipelines and I/O redirection using \textbf{Linux} syscalls and \textbf{POSIX} file descriptor semantics.}
-            \resumeItem{Added persistent command history using \textbf{readline} to improve interactive usability.}
-        \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-%-----------SKILLS-----------
-\section{Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-                 \textbf{Languages}{: C, C++, Python, Java, Bash, Assembly (ARM, RISC-V)} \\
-                 \textbf{Libraries \& Tools}{: Valgrind, GDB, CMake, Make, Android Tools (adb, Fastboot), Docker} \\
-                 \textbf{Technologies \& Protocols}{: Linux, QNX, FreeRTOS, CAN, TCP/IP, UART, I2C, gRPC, protobuf}
-            }
-        }
- \end{itemize}
+\ifskillsfirst
+  \input{sections/education.tex}
+\else
+  \input{sections/skills.tex}
+\fi
 
 \end{document}
