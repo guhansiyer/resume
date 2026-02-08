@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  8 FEB 2026 14:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  8 FEB 2026 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,13 +436,13 @@ Here is how much of TeX's memory you used:
  36992 multiletter control sequences out of 15000+600000
  578620 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,312b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,344b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/texli
 ve/2024/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/texlive/2024/tex
 mf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb><c:/texlive/2024/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmsy6.pfb>
-Output written on output/GI_Resume.pdf (1 page, 69422 bytes).
+Output written on output/GI_Resume.pdf (1 page, 69622 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream
