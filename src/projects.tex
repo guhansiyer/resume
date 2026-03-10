@@ -1,14 +1,13 @@
 \section{Projects}
     \resumeSubHeadingListStart
 
-    % \resumeProjectHeading
-    %       {\href{}{ \textbf{ARM Microkernel}}  \space  $|$ \textit{C, Raspberry Pi, ARM Assembly}}{November 2025}
-    %       \resumeItemListStart
-    %         \resumeItem{Designed core kernel functionality including interrupt vectors, inter-process communication, and memory-mapped device I/O.}
-    %         \resumeItem{Implemented a \textbf{cooperative multitasking scheduler} with low-overhead context switching for lightweight user-process management.}
-    %         \resumeItem{Built a custom \textbf{ARM} bootloader to initialize hardware peripherals for a stable system boot sequence.}
-
-    %     \resumeItemListEnd
+    \resumeProjectHeading
+          {\href{}{ \textbf{Embedded Real-Time Kernel}}  \space  $|$ \textit{C, STM32, ARM Cortex-M4}}{}
+          \resumeItemListStart
+            \resumeItem{Designed a lightweight \textbf{real-time kernel} for \textbf{ARM Cortex-M4 MCUs}, supporting deadline-based scheduling, cooperative multitasking, and dynamic task creation.}
+            \resumeItem{Implemented a \textbf{preemptive Earliest Deadline First (EDF) scheduler} using \textbf{SysTick interrupts}, with task control blocks and context switching via \textbf{PendSV} and \textbf{SVC}.}
+            \resumeItem{Built a custom \textbf{first-fit heap allocator} with freelist management, block coalescing, and runtime fragmentation tracking.}
+        \resumeItemListEnd
 
     % \resumeProjectHeading
     %   {\href{https://github.com/WilliamZhang20/ECE298A-TPU}{ \uline{\textbf{TT-TPU}}}  \space  $|$ \textit{Verilog, Python}}{}
@@ -21,16 +20,16 @@
     \resumeProjectHeading
           {\href{https://github.com/guhansiyer/wintop}{\uline{\textbf{wintop}}}  \space  $|$ \textit{C, MSVC, Windows API}}{}
           \resumeItemListStart
-            \resumeItem{Developed a CLI-based \textbf{thread and process inspector} in \textbf{C} for \textbf{Windows} platforms, exposing detailed per-thread scheduling and runtime information.}
-            \resumeItem{Enumerated processes and threads with \textbf{Win32 APIs}, fetching scheduling and timing metadata with low overhead.}
-            \resumeItem{Designed a terminal interface to provide \textbf{real-time} diagnostic information, emulating \textit{top} and \textit{ps}.}
+            \resumeItem{Created a \textbf{CLI system diagnostics tool} exposing detailed per-thread and per-process runtime metrics.}
+            \resumeItem{Enumerated processes and threads with \textbf{Win32 APIs}, retrieving scheduling state, CPU time, and runtime metadata with low overhead.}
+            \resumeItem{Designed a terminal interface providing \textbf{real-time} visibility into thread scheduling and execution behaviour.}
         \resumeItemListEnd
 
-    \resumeProjectHeading
-          {\href{https://github.com/guhansiyer/osh}{\uline{\textbf{osh: The Open Shell}}}  \space  $|$ \textit{C, Linux}}{}
-          \resumeItemListStart
-            \resumeItem{Created a lightweight \textbf{Linux} shell in C supporting built-in commands and external programs.}
-            \resumeItem{Implemented pipelines and I/O redirection using \textbf{Linux} syscalls and \textbf{POSIX} file descriptor semantics.}
-            \resumeItem{Added persistent command history using \textbf{readline} to improve interactive usability.}
-        \resumeItemListEnd
+    % \resumeProjectHeading
+    %       {\href{https://github.com/guhansiyer/osh}{\uline{\textbf{osh: The Open Shell}}}  \space  $|$ \textit{C, Linux}}{}
+    %       \resumeItemListStart
+    %         \resumeItem{Created a lightweight \textbf{Linux} shell in C supporting built-in commands and external programs.}
+    %         \resumeItem{Implemented pipelines and I/O redirection using \textbf{Linux} syscalls and \textbf{POSIX} file descriptor semantics.}
+    %         \resumeItem{Added persistent command history using \textbf{readline} to improve interactive usability.}
+    %     \resumeItemListEnd
     \resumeSubHeadingListEnd
