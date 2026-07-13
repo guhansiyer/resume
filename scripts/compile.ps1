@@ -10,8 +10,8 @@ $srcDir    = Join-Path $rootDir "src"
 $orderFile = Join-Path $srcDir "order.tex"
 
 $buildDir  = Join-Path $rootDir ".latex-build"
-$finalPdf  = Join-Path $rootDir "GI_Resume.pdf"
-$jobName   = "GI_Resume"
+$finalPdf  = Join-Path $rootDir "resume.pdf"
+$jobName   = "resume"
 
 New-Item -ItemType Directory -Path $buildDir -Force | Out-Null
 
@@ -39,7 +39,7 @@ else {
 $ErrorActionPreference = 'Continue'
 $process = Start-Process pdflatex `
     -WorkingDirectory $srcDir `
-    -ArgumentList "-interaction=nonstopmode", "-halt-on-error", "-output-directory=$buildDir", "GI_Resume.tex" `
+    -ArgumentList "-interaction=nonstopmode", "-halt-on-error", "-output-directory=$buildDir", "resume.tex" `
     -PassThru -Wait -NoNewWindow
 
 if ($process.ExitCode -ne 0) {

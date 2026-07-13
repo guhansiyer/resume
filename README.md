@@ -1,6 +1,12 @@
 # Resume
 
-This repository holds the most updated version of my resume, the LaTeX used to make it, and the scripts that build it.
+This repository holds the most updated version of my resume, including the source code and build scripts.
+
+## Prerequisites
+
+To build, you'll need:
+* A LaTeX distribution with pdflatex installed (MiKTeX on Windows, TeX Live on macOS/Linux)
+* `PowerShell` for the Windows script or `Bash` for the macOS/Linux script
 
 ## PowerShell and Bash scripts
 

@@ -8,8 +8,8 @@ SRC_DIR="$ROOT_DIR/src"
 ORDER_FILE="$SRC_DIR/order.tex"
 
 BUILD_DIR="$ROOT_DIR/.latex-build"
-FINAL_PDF="$ROOT_DIR/GI_Resume.pdf"
-JOBNAME="GI_Resume"
+FINAL_PDF="$ROOT_DIR/resume.pdf"
+JOBNAME="resume"
 
 mkdir -p "$BUILD_DIR"
 
@@ -35,7 +35,7 @@ fi
   cd "$SRC_DIR"
   pdflatex -interaction=nonstopmode -halt-on-error \
     -output-directory="$BUILD_DIR" \
-    "GI_Resume.tex"
+    "resume.tex"
 )
 
 # On success: copy final PDF to repo root and remove build artifacts
