@@ -11,9 +11,10 @@ BUILD_DIR="$ROOT_DIR/.latex-build"
 FINAL_PDF="$ROOT_DIR/resume.pdf"
 JOBNAME="resume"
 
+rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
+trap 'rm -rf "$BUILD_DIR"' EXIT
 
-# Section order switch (supports existing arg + alias)
 if [[ "${1:-}" == "ww-ordering" || "${1:-}" == "skills-first" ]]; then
   echo "Building with Skills before Education"
   cat > "$ORDER_FILE" <<'EOF'
@@ -30,21 +31,19 @@ else
 EOF
 fi
 
-# Run from tex/ so \input{order.tex} resolves
 (
   cd "$SRC_DIR"
-  pdflatex -interaction=nonstopmode -halt-on-error \
-    -output-directory="$BUILD_DIR" \
-    "resume.tex"
+  for pass in 1 2; do
+    pdflatex -interaction=nonstopmode -halt-on-error \
+      -output-directory="$BUILD_DIR" \
+      "resume.tex" >/dev/null
+  done
 )
 
-# On success: copy final PDF to repo root and remove build artifacts
 if [[ -f "$BUILD_DIR/$JOBNAME.pdf" ]]; then
   cp -f "$BUILD_DIR/$JOBNAME.pdf" "$FINAL_PDF"
+  echo "Wrote: $FINAL_PDF"
 else
   echo "Error: expected PDF not found at $BUILD_DIR/$JOBNAME.pdf" >&2
   exit 1
 fi
-
-rm -rf "$BUILD_DIR"
-echo "Wrote: $FINAL_PDF"

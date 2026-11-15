@@ -1,0 +1,20 @@
+# Lint each src/*.tex file explicitly instead of following \input into TeX Live.
+CmdLine { -I0 }
+
+# These declarations and custom macros intentionally accept trailing whitespace.
+# Append to the built-in list; do not disable warning 1 globally.
+Silent {
+    \raggedbottom \raggedright \titlerule
+    \ifskillsfirst \skillsfirsttrue \skillsfirstfalse
+    \resumeSubheading \resumeSubSubheading \resumeProjectHeading
+    \resumeSubHeadingListStart \resumeSubHeadingListEnd
+    \resumeItemListStart \resumeItemListEnd
+}
+
+# Spaced en-dashes are intentional in date ranges.
+WordDash = { 2 3 }
+
+# TeX Live 2024's config contains a regex incompatible with this Windows
+# ChkTeX 1.7.8 POSIX build. Disable optional user-regex checks only.
+# Built-in checks and literal UserWarn checks remain enabled.
+UserWarnRegex = { }

@@ -3,6 +3,8 @@ param(
     [switch]$SkillsFirst
 )
 
+$ErrorActionPreference = 'Stop'
+
 $scriptDir = $PSScriptRoot
 $rootDir   = Split-Path $scriptDir -Parent
 
@@ -13,50 +15,46 @@ $buildDir  = Join-Path $rootDir ".latex-build"
 $finalPdf  = Join-Path $rootDir "resume.pdf"
 $jobName   = "resume"
 
+if (Test-Path $buildDir) {
+    Remove-Item -Path $buildDir -Recurse -Force
+}
 New-Item -ItemType Directory -Path $buildDir -Force | Out-Null
 
-# Decide ordering (support old flag + new alias)
 $skillsFirstEnabled = $WWOrdering -or $SkillsFirst
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
 if ($skillsFirstEnabled) {
     Write-Host "Building with Skills before Education"
-    @"
-% Auto-generated
-\newif\ifskillsfirst
-\skillsfirsttrue
-"@ | Set-Content -Path $orderFile -Encoding UTF8
-}
-else {
-    Write-Host "Building with Education before Skills"
-    @"
-% Auto-generated
-\newif\ifskillsfirst
-\skillsfirstfalse
-"@ | Set-Content -Path $orderFile -Encoding UTF8
-}
-
-# Run pdflatex from src/ so \input{order.tex} resolves
-$ErrorActionPreference = 'Continue'
-$process = Start-Process pdflatex `
-    -WorkingDirectory $srcDir `
-    -ArgumentList "-interaction=nonstopmode", "-halt-on-error", "-output-directory=$buildDir", "resume.tex" `
-    -PassThru -Wait -NoNewWindow
-
-if ($process.ExitCode -ne 0) {
-    Write-Host "Compilation failed with exit code: $($process.ExitCode)"
-    $logPath = Join-Path $buildDir "$jobName.log"
-    Get-Content $logPath -ErrorAction SilentlyContinue
-    exit $process.ExitCode
-}
-
-# On success: copy PDF to repo root and delete build dir
-$pdfPath = Join-Path $buildDir "$jobName.pdf"
-if (Test-Path $pdfPath) {
-    Copy-Item -Path $pdfPath -Destination $finalPdf -Force
+    $orderContent = "% Auto-generated`n\newif\ifskillsfirst`n\skillsfirsttrue`n"
 } else {
-    Write-Host "Error: expected PDF not found at $pdfPath"
-    exit 1
+    Write-Host "Building with Education before Skills"
+    $orderContent = "% Auto-generated`n\newif\ifskillsfirst`n\skillsfirstfalse`n"
 }
+[System.IO.File]::WriteAllText($orderFile, $orderContent, $utf8NoBom)
 
-Remove-Item -Path $buildDir -Recurse -Force
-Write-Host "Wrote: $finalPdf"
+try {
+    for ($pass = 1; $pass -le 2; $pass++) {
+        $process = Start-Process pdflatex `
+            -WorkingDirectory $srcDir `
+            -ArgumentList "-interaction=nonstopmode", "-halt-on-error", "-output-directory=$buildDir", "resume.tex" `
+            -PassThru -Wait -NoNewWindow
+
+        if ($process.ExitCode -ne 0) {
+            Write-Host "Compilation failed on pass $pass with exit code: $($process.ExitCode)"
+            $logPath = Join-Path $buildDir "$jobName.log"
+            Get-Content $logPath -ErrorAction SilentlyContinue
+            exit $process.ExitCode
+        }
+    }
+
+    $pdfPath = Join-Path $buildDir "$jobName.pdf"
+    if (Test-Path $pdfPath) {
+        Copy-Item -Path $pdfPath -Destination $finalPdf -Force
+        Write-Host "Wrote: $finalPdf"
+    } else {
+        Write-Host "Error: expected PDF not found at $pdfPath"
+        exit 1
+    }
+} finally {
+    Remove-Item -Path $buildDir -Recurse -Force -ErrorAction SilentlyContinue
+}
